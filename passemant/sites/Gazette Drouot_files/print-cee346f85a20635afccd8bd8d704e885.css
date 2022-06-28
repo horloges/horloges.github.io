@@ -1,0 +1,15 @@
+@media print{
+ body{color:#000}
+ .container.printOnly{padding-left:0}
+ .noPrint{display:none}
+ .growlArticle{display: none}
+ .printOnly{display:block}
+ .contenuArticle{width:100%;flex: 0 0 100%;max-width: 100%;}
+ .logoPrint{padding-left: 0;padding-top: 10px;}
+ .titreActu {color: #000;}
+ .flashMessage{margin-top:0;}
+  a.linkTopActu,.personaliteTexte a,.blocEnVente a, .articleMarche a, .filActus a, .listeArticles a, .venteArticleCarre a {text-decoration:none}
+ .cubeArticle {padding-left: 0;}
+ .premierBloc .titreBloc{ float:left;}
+ 
+}

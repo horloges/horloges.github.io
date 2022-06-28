@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <script>
+        (function() {
+            const parsedFragmentParams = {};
+            window.location.hash
+                .split("&")
+                .map(function(part) {
+                    return part.replace(/#/, "");
+                }).forEach(function(param) {
+                if (param !== undefined) {
+                        const parts                    = param.split("=");
+                        parsedFragmentParams[parts[0]] = parts[1];
+                    }
+                });
+
+            if(parsedFragmentParams.hasOwnProperty('ma_test')) {
+                localStorage.setItem('ma-test', parsedFragmentParams.ma_test);
+                document.addEventListener('DOMContentLoaded', function(){
+                    this.querySelector('body').innerHTML = 'Activation Mon actu test ' + parsedFragmentParams.ma_test + ' : validé' ;
+                });
+            }
+
+            if (parsedFragmentParams.hasOwnProperty("access_token")) {
+                const accessToken = parsedFragmentParams.access_token;
+                const base64Url   = accessToken.split(".")[1];
+                const base64      = base64Url.replace("-", "+").replace("_", "/");
+                const decodedJWT  = JSON.parse(window.atob(base64));
+                const message = {
+                    type:  "sso_status",
+                    name:  "logged_in",
+                    email: decodedJWT.email,
+                    idIAM: decodedJWT.sub,
+                    token: accessToken
+                };
+
+                parent.postMessage(
+                    {
+                        type:  "sso_status",
+                        name:  "logged_in",
+                        email: decodedJWT.email,
+                        idIAM: decodedJWT.sub,
+                        token: accessToken
+                    },
+                    location.origin
+                );
+            } else if (parsedFragmentParams.hasOwnProperty("code")) {
+                parsedFragmentParams.type = "sso_status";
+                parent.postMessage(
+                    parsedFragmentParams,
+                    location.origin
+                );
+            }
+            else {
+                parent.postMessage(
+                    {
+                        type:  "sso_status",
+                        name:  "not_logged",
+                    },
+                    location.origin
+                );
+            }
+        })();
+    </script>
+</head>
+<body>
+
+
+</body></html>
