@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- TemplateBeginEditable name="doctitle" -->
+
+    <TITLE>Les horloges remarquables de Cluses</TITLE>
+
+<SCRIPT type="text/javascript">
+  function JavaBlink() {
+     var blinks = document.getElementsByTagName('JavaBlink');
+     for (var i = blinks.length - 1; i >= 0; i--) {
+        var s = blinks[i];
+        s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+     }
+     window.setTimeout(JavaBlink, 1000);
+  }
+  if (document.addEventListener) document.addEventListener("DOMContentLoaded", JavaBlink, false);
+  else if (window.addEventListener) window.addEventListener("load", JavaBlink, false);
+  else if (window.attachEvent) window.attachEvent("onload", JavaBlink);
+  else window.onload = JavaBlink;
+</SCRIPT>
+    
+ <style type="text/css">
+      h1{
+        color: #000000;
+      }
+      h2{
+        color: #FF0000;
+      }
+      .boxed {
+        border: 1px solid green ;
+      }
+     mark.red {
+      color:#ff0000;
+      background: none;
+     }
+    </style>
+  </head>
+  <BODY TEXT="#505000" BGCOLOR="#FFFFFF">    
+    <font face=helvetica>
+    
+    <center>
+      <h1>Les horloges remarquables de Cluses</h1>
+      
+      <h2>V&eacute;rit&eacute;s et mensonges</h2>
+    </center>
+
+    <center>
+    <JavaBlink><p style="width:500px;border: 1px solid black;color: #123456;">
+      Avertissement&nbsp;: ce site n'engage aucun employeur et est établi
+      à titre de chercheur indépendant. Il contient des critiques constructives
+      et ne cherche en aucun cas à dénigrer.
+      Rétablir la vérité n'est pas dénigrer, c'est le devoir du chercheur.
+    </p> </JavaBlink>
+    </center>
+
+    
+    <p>Cette page est consacrée aux horloges remarquables de Cluses,
+      notamment l'horloge construite pour l'hôtel de ville de Cluses
+      et l'horloge-mère du lycée Charles Poncet.
+      Il s'agit en particulier de donner ici des informations sur l'actualit&eacute;
+      de ces horloges, sur des travaux en cours, etc.
+      Il s'agit aussi de donner des points de vues diff&eacute;rents de ceux
+      soit-disant officiels, qui ne donnent souvent qu'une partie de
+      l'information, et souvent des informations inexactes.
+      Aujourd'hui, la m&eacute;diation et la mise en sc&egrave;ne priment
+      souvent sur la recherche, au point de la freiner et de condamner
+      certaines recherches &agrave; ne jamais &ecirc;tre faites.</p>
+
+<p>Le contenu de cette page va procha&icirc;nement s'enrichir.
+
+<p><a href="https://roegel.wixsite.com/science">D. Roegel</a>
+  
+<p>Derni&egrave;re modification&nbsp;: 4 juillet 2022.
+  
+  </body>
+</html>
