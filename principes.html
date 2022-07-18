@@ -33,7 +33,26 @@
      mark.red {
       color:#ff0000;
       background: none;
-     }
+      }
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    content: '\201C';
+}
+
+blockquote p::after {
+    content: '\201D';
+}
+
+      
     </style>
   </head>
   <BODY TEXT="#505000" BGCOLOR="#FFFFFF">    
@@ -111,7 +130,13 @@
       que des restaurateurs, fussent-ils de l'INP, il en résulte
       de grands manquements d'une part pour l'étude et la documentation
       des œuvres, et d'autre part pour l'accessibilité des données
-      de la recherche.
+      de la recherche. Pour un &eacute;tat des lieux de la documentation
+      des &#156;uvres lors d'une intervention patrimoniale, on pourra
+      lire cette synth&egrave;se&nbsp;:
+
+      <blockquote>
+	<p>D. Roegel&nbsp;: <a href="principes/roegel2022doc-patrimoine.pdf">La documentation du patrimoine scientifique par les restaurateurs. L’exemple des horloges.</a>, 2022</p>
+      </blockquote>
 
     <p>Les deux points précédents
       sont effectivement à la racine des problèmes que l'on observe
@@ -202,7 +227,7 @@
 
 <p><a href="https://roegel.wixsite.com/science">D. Roegel</a>
   
-<p>Derni&egrave;re modification&nbsp;: 8 juillet 2022.
+<p>Derni&egrave;re modification&nbsp;: 18 juillet 2022.
   
   </body>
 </html>
