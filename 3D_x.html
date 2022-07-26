@@ -187,6 +187,57 @@
       <li><b>Qu'est-ce que le modèle 3D
 	  par opposition à des vidéos ou des animations interactives&nbsp;?</b>
 
+	<p>Il importe de comprendre ce qu'est la conception 3D.
+	  Un mécanisme complexe est formé de plusieurs pièces.
+	  Ces pièces sont localisées dans l'espace à différents endroits,
+	  éventuellement variables dans le temps, mais chaque pièce
+	  peut être envisagée dans un repère propre. Par exemple une roue
+	  a naturellement un axe de rotation et on peut introduire
+	  un point particulier sur cet axe. Une pièce particulière
+	  est formée de surfaces planes ou courbes dont les intersections
+	  déterminent l'objet. Ces différentes surfaces sont construites
+	  sur la base de points de référence positionnés dans l'espace
+	  ou de certaines dimensions.
+	  Si l'on construit par exemple un arbre cylindrique,
+	  on peut introduire les points extrêmes de l'axe de l'arbre
+	  et le rayon du cylindre.
+
+	<p>Un modèle 3D est donc un ensemble d'objets, eux-mêmes déterminés
+	  par des points et des dimensions. Ces points et dimensions sont
+	  en général placés interactivement avec des logiciels comme
+	  CATIA, Autodesk Inventor, SolidWorks, etc., mais rien n'empêche
+	  de créer directement des représentations plus abstraites
+	  par d'autres moyens. On peut par exemple créer un cube directement
+	  au format OBJ, même si c'est en général plus fastidieux
+	  que d'utiliser un outil interactif qui possède une bibliothèque
+	  d'objets fondamentaux.
+
+	<p>Si un modèle comporte des pièces flexibles, l'approche précédente
+	  n'est pas totalement applicable, et il faut soit envisager
+	  de créer une série de variantes d'un objet, soit se limiter
+	  à l'animation au sein du logiciel considéré.
+
+	<p>Un exemple de modèle 3D en ligne est celui que j'ai
+	  fait pour l'horloge de Notre-Dame. Il se compose simplement
+	  de nombreux fichiers STEP et autres, ainsi que d'un fichier
+	  indiquant où dans l'espace sont localisés les différents
+	  objets dans un état de référence.
+	  C'est à partir d'un modèle 3D que l'on peut créer des animations,
+	  c'est-à-dire déplacer les objets individuels, des vidéos,
+	  des applications sur appareils mobiles, etc. Mais toutes
+	  ces applications ne doivent pas être confondues avec le modèle
+	  lui-même et si le modèle n'est pas rendu accessible,
+	  la plupart des développements scientifiques du modèle
+	  deviennent impossibles.
+
+	<p>Néanmoins, même si un modèle est rendu accessible au format STEP
+	  (ou autre), il n'en reste pas moins un modèle rigide
+	  et il n'est pas facile de le modifier. Pour pouvoir en plus
+	  modifier un modèle, il faut en général pouvoir revenir
+	  au format originel, afin de déplacer des points, de changer
+	  des dimensions, etc. Cela nécessite souvent l'utilisation
+	  du logiciel de modélisation qui a servi à créer le modèle.
+	  
 	</li>
       
 
@@ -236,7 +287,8 @@
 	  il est utile pour certaines applications. Il est essentiel
 	  aussi de fournir les éléments du modèle (roues, arbres, etc.)
 	  chacun dans leur repère naturel (par exemple avec l'origine
-	  d'une roue à-peu-près en son centre), ce qui impose en retour
+	  d'une roue sur son axe et l'axe de rotation selon l'un des
+	  trois axes de référence), ce qui impose en retour
 	  de fournir des données de positionnement des pièces dans l'espace.
 	  Il est dans tous les cas indispensable d'éviter de ne fournir
 	  qu'un format propriétaire, comme disons celui
