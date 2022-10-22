@@ -1,0 +1,926 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- TemplateBeginEditable name="doctitle" -->
+
+    <TITLE>Les grandes horloges du palais de Mafra : tour Nord</TITLE>
+
+<SCRIPT type="text/javascript">
+  function JavaBlink() {
+     var blinks = document.getElementsByTagName('JavaBlink');
+     for (var i = blinks.length - 1; i >= 0; i--) {
+        var s = blinks[i];
+        s.style.visibility = (s.style.visibility === 'visible') ? 'hidden' : 'visible';
+     }
+     window.setTimeout(JavaBlink, 1000);
+  }
+  if (document.addEventListener) document.addEventListener("DOMContentLoaded", JavaBlink, false);
+  else if (window.addEventListener) window.addEventListener("load", JavaBlink, false);
+  else if (window.attachEvent) window.attachEvent("onload", JavaBlink);
+  else window.onload = JavaBlink;
+</SCRIPT>
+    
+ <style type="text/css">
+      h1{
+        color: #000000;
+      }
+      h2{
+        color: #FF0000;
+      }
+      .boxed {
+        border: 1px solid green ;
+      }
+     mark.red {
+      color:#ff0000;
+      background: none;
+     }
+    </style>
+    
+</head>
+  <BODY TEXT="#505000" BGCOLOR="#FFFFFF">    
+    <font face=helvetica>
+    
+    <center>
+      <h1>Les grandes horloges du <a href="https://fr.wikipedia.org/wiki/Palais_national_de_Mafra">palais de Mafra</a></h1>
+
+      <h2>L'horloge de la tour Nord</h2>
+
+    </center>
+
+    <center>
+    <JavaBlink><p style="width:500px;border: 1px solid black;color: #123456;">
+      Avertissement&nbsp;: ce site n'engage aucun employeur et est établi
+      à titre de chercheur indépendant. Il contient des critiques constructives
+      et ne cherche en aucun cas à dénigrer.
+      Rétablir la vérité n'est pas dénigrer, c'est le devoir du chercheur.
+    </p> </JavaBlink>
+    </center>
+
+    
+    <p>Le palais de <a href="https://fr.wikipedia.org/wiki/Mafra_(Portugal)">Mafra</a>
+      comporte deux grandes horloges, peut-être les
+      <a href="https://en.wikipedia.org/wiki/Mafra_carillons">plus grandes horloges à
+	carillon du monde</a>, ou en tous cas parmi les plus grandes.
+      Ces horloges datent des années 1730 environ et ont été construites
+      par les horlogers wallons Debefve (de Beef),
+      probablement Gilles Debefve (1694-1763) et Jean Debefve (1697-17??).
+      L'horloge de la tour Nord actionnait initialement 46 cloches
+      fondues par le fondeur Nicolau Levach de Liège.
+      <a href="sud.html">Celle de la tour Sud</a> actionnait 47 cloches
+      fondues par le fondeur Guillaume Witlockx d'Anvers.
+      Les deux horloges sont très similaires, mais pas identiques.
+      
+      <p>Ces horloges ont fait l'objet d'une modélisation
+      3D en 2018-2019 par François Simon-Fustier et son employé
+	Sébastien Lucchetti à l'aide du logiciel
+	<a href="https://fr.wikipedia.org/wiki/SolidWorks">SolidWorks</a>. Les horloges
+      semblent aussi avoir été restaurées, ou au moins partiellement
+      démontées et nettoyées, mais apparemment de manière locale.
+      Aucune information n'a véritablement été diffusée sur ce sujet,
+      ce qui est un peu dommage. L'atelier de M.&nbsp;Simon-Fustier
+      a réalisé une  visionneuse du modèle 3D (en quatre parties,
+      <a href="http://mafra.horlogerie-ancienne.fr/partie-1/">1</a>,
+      <a href="http://mafra.horlogerie-ancienne.fr/partie-2/">2</a>,
+      <a href="http://mafra.horlogerie-ancienne.fr/partie-3/">3</a> et
+      <a href="http://mafra.horlogerie-ancienne.fr/partie-4/">4</a>)
+      et en particulier une animation de démontage de l'horloge.
+      La visionneuse a simplement été obtenue par l'export
+      <a href="https://fr.wikipedia.org/wiki/SolidWorks">SolidWorks</a> pour
+      <a href="https://fr.wikipedia.org/wiki/WebGL">WebGL</a> et
+      <a href="https://fr.wikipedia.org/wiki/Three.js">Three.js</a> et n'a pas été
+      développée par l'atelier de M.&nbsp;Simon-Fustier, qui s'est borné
+      à faire quelques adaptations.
+    
+    <p>Les illustrations qui suivent sont toutes basées sur
+      cette modélisation 3D. Je me suis contenté
+      de faire des copies d'écran et de les annoter. Les nombres
+      de dents ont été déduits de l'examen attentif du modèle
+      et n'ont pas (à ma connaissance) été rendus publics à ce jour (2022).
+      En fait, aucune documentation ne semble avoir été rendue publique. 
+      Ce travail gagnerait donc à être complété par M.&nbsp;Simon-Fustier,
+      voire à être inclus dans son «&nbsp;Encyclopédie&nbsp;»
+      de savoir-faire horloger qui se veut ouverte et accessible à tous.
+
+    <p>Cela dit, on verra que la modélisation n'est pas sans défauts
+      et qu'elle pourrait encore être améliorée. Il faudrait pour cela
+      notamment qu'elle soit plus ouverte et que les sources
+      <a href="https://fr.wikipedia.org/wiki/SolidWorks">SolidWorks</a>,
+      ou encore des exports <a href="https://fr.wikipedia.org/wiki/Standard_pour_l%27%C3%A9change_de_donn%C3%A9es_de_produit">STEP</a> soient disponibles, de façon à pouvoir
+      être retravaillés par d'autres, et donc de manière collaborative.
+
+    <p>Ces horloges ne sont pas très complexes, mais il y a tout de même
+      quelques particularités qui les rendent intéressantes. Le fait qu'elles
+      soient très grandes n'a aucun impact sur la modélisation,
+      mais complique évidemment un peu les relevés. Il faut aussi comprendre
+      que beaucoup de pièces sont similaires, il suffit de penser à toutes
+      les levées de marteaux, les équerres, etc. Parmi les originalités
+      de ces horloges, il y a la présence de deux tambours de carillon,
+      le fait que l'heure n'est affichée que sur un cadran de six heures
+      pour l'horloge de la tour Nord, le fait que la sonnerie des quarts
+      et heures le prenne en compte (roue de compte de 57 dents),
+      l'emploi de plusieurs roues pour les remontages
+      et la possibilité de désengréner certains pignons.
+      J'ai essayé de détailler tout cela ci-après.
+   
+    <p>Très peu de photographies de l'horloge sont disponibles.
+      Les rares que j'ai pu trouver sont les suivantes,
+      toutes de l'horloge de la tour Nord&nbsp;:
+
+
+    <p>Une vue avec les tambours des carillons à gauche (<a href="https://www.leprogres.fr/rhone-69-edition-lyon-metropole/2019/08/04/l-horloger-de-la-croix-rousse-reveille-les-plus-grosses-horloges-carillons-du-monde">source</a>)&nbsp;:
+      
+      <center><img src="photos/horloge-nord3.jpg" width="500"></center>
+
+      <br>
+
+    <p>Vue de dessus (on remarquera les arbres joliment ouvragés, <a href="https://www.leprogres.fr/rhone-69-edition-lyon-metropole/2019/08/04/l-horloger-de-la-croix-rousse-reveille-les-plus-grosses-horloges-carillons-du-monde">source</a>).
+      La roue d'échappement est visible en bas à gauche&nbsp;:
+      
+<center><img src="photos/horloge-nord2.jpg" width="500"></center>
+<br>
+
+<p>M.&nbsp;Simon-Fustier devant la roue de compte de l'horloge
+  (la photographie <a href="https://www.leprogres.fr/rhone-69-edition-lyon-metropole/2019/08/04/l-horloger-de-la-croix-rousse-reveille-les-plus-grosses-horloges-carillons-du-monde">disponible sur internet</a> est inversée)&nbsp;:
+  
+<center><img src="photos/horloge-nord1.jpg" width="500"></center>
+
+<br>
+<p>Autre vue (<a href="https://www.leprogres.fr/rhone-69-edition-lyon-metropole/2019/08/04/l-horloger-de-la-croix-rousse-reveille-les-plus-grosses-horloges-carillons-du-monde">source</a>). Là aussi, on remarquera les arbres joliment
+  ouvragés, ainsi que les rayons en accolade des roues&nbsp;:
+<center><img src="photos/horloge-nord4.jpg" width="500"></center>
+
+      <br>
+
+<p>Voici d'abord des vues d'ensemble de différents angles.
+  Le rouage de mouvement est en vert, le rouage
+  de sonnerie des quarts et heures est en bleu,
+  le grand carillon (toutes les 12 heures)
+  est en jaune et le petit carillon (toutes les heures) est en noir.
+  
+<center><img src="nord/XXX001.png"></center><br>
+<center><img src="nord/XXX002.png"></center><br>
+<center><img src="nord/XXX003.png"></center><br>
+
+<p>Le pendule se trouve à l'arrière&nbsp;:
+  
+  <center><img src="nord/XXX004.png"></center><br>
+
+<p>Vue des rouages par dessus&nbsp;:
+  
+  <center><img src="nord/XXX005.png"></center><br>
+
+<p>Vue des rouages du dessous (le choix de la couleur noire n'est évidemment
+  pas très heureux)&nbsp;:
+
+  
+  <center><img src="nord/XXX006.png"></center><br>
+
+  <p>Vue d'ensemble du rouage de mouvement. La manivelle de remontage
+  est en bas à gauche. L'arbre de transmission verticale mène
+  aux deux cadrans extérieurs (cadrans de 6 heures.
+  La grande roue à 12 trous fait un tour en douze heures.
+  
+    <center><img src="nord/XXX007.png"></center><br>
+
+  <p>Vue du rouage de mouvement par la gauche. Le cylindre (et non barillet)
+    est visible au fond. Tous les éléments de ce rouage
+    sont en vert.
+    
+    <center><img src="nord/XXX008.png"></center><br>
+
+  <p>La roue d'échappement et son ancre. L'ancre est reliée à la fourchette
+    via une charnière à coulisse.
+    
+    <center><img src="nord/XXX009.png"></center><br>
+
+<p>L'arbre menant à la fourchette située de l'autre côté de la cage.
+    
+  <center><img src="nord/XXX010.png"></center><br>
+
+  <p>La suspension du pendule et la fourchette.
+  
+    <center><img src="nord/XXX011.png"></center><br>
+
+<p>Le pendule vu par le côté.
+    
+  <center><img src="nord/XXX012.png"></center><br>
+
+<p>L'ancre et la roue d'échappement de 24 dents.
+  
+  <center><img src="nord/XXX013.png"></center><br>
+
+<p>Le pignon de 10 ailes de la roue d'échappement
+  et la roue seconde de 50 dents.
+  
+  <center><img src="nord/XXX014.png"></center><br>
+
+<p>La roue seconde de 50 dents (à droite),
+  son pignon de 10 ailes (à gauche) et la roue première de 90 dents.
+  Le cylindre est visible en bas.
+  
+  <center><img src="nord/XXX015.png"></center><br>
+
+<p>La roue à rochet du cylindre du rouage de mouvement.
+  Cette roue est solidaire de la roue première
+  dont un fragment est visible au premier plan,
+  et ce sont les cliquets qui se déplacent au remontage,
+  alors que c'est habituellement l'inverse.
+  La grande roue au fond est la grande roue de
+  remontage de 60 dents.
+  
+  <center><img src="nord/XXX016.png"></center><br>
+
+<p>L'arbre de la continuité de marche. Un petit pignon de 8 ailes
+  peut être engréné avec la roue première et à l'aide
+  d'un levier et d'un poids fixé à l'extrémité droite de l'arbre
+  de ce pignon, il était possible de faire en sorte que l'horloge
+  continue de fonctionner pendant le remontage.
+  
+  <center><img src="nord/XXX017.png"></center><br>
+
+<p>Détail de l'avant de l'arbre du pignon de continuité de marche.
+  
+  <center><img src="nord/XXX018.png"></center><br>
+
+<p>La roue de remontage de 60 dents.
+  
+  <center><img src="nord/XXX019.png"></center><br>
+
+<p>La roue de remontage peut engréner avec une roue intermédiaire de 42 dents.
+  Ici, les deux roues sont désengrénées. Le pivot arrière de l'arbre
+  de la roue intermédiaire est déplaçable.
+  
+  <center><img src="nord/XXX020.png"></center><br>
+
+<p>La roue intermédiaire de 42 dents engrène elle-même avec un pignon
+  de 6 ailes qui est sur l'arbre de la manivelle de remontage.
+  
+  <center><img src="nord/XXX021.png"></center><br>
+
+<p>L'arbre de la manivelle de remontage vu par le côté.
+  
+  <center><img src="nord/XXX022.png"></center><br>
+
+<p>La manivelle de remontage vue de l'extérieur.
+  
+  <center><img src="nord/XXX023.png"></center><br>
+
+  L'arbre de la roue à rochet et de la roue première
+  se poursuit à l'avant par deux cames et une roue de 16 dents.
+  Cette roue engrène avec une roue similaire d'axe presque vertical et menant
+  aux deux cadrans extérieurs. Ces roues font un tour en une heure.
+  
+  <center><img src="nord/XXX024.png"></center><br>
+
+<p>Vue des deux cames par le haut. La came du fond comporte quatre taquets
+  pour le déclenchement des sonneries des quarts. La came à l'avant comporte
+  une encoche qui servira au moment des heures.
+  
+  <center><img src="nord/XXX025.png"></center><br>
+
+<p>Derrière la came de déclenchement des quarts, on distingue six chevilles.
+  Celles-ci engrènent avec la roue de 72 dents comportant 12 trous circulaires.
+  Cette roue fait donc un tour en douze heures.
+  Le levier bleu au premier plan est la détente de déclenchement
+  du rouage de sonnerie des quarts.
+  
+  <center><img src="nord/XXX026.png"></center><br>
+
+<p>La roue effectuant un tour en douze heures.
+  Cette roue comporte un disque réglable muni d'un petit tenon.
+  Ce tenon agit sur la détente située à gauche et pouvait
+  déclencher la sonnerie du grand carillon (jaune).
+  Le déplacement du disque réglable (à douze encoches)
+  permettait d'ajuster ce déclenchement pour qu'il se produise
+  à la bonne heure.
+  
+  <center><img src="nord/XXX027.png"></center><br>
+
+<p>Détail de la came réglable.
+  
+<center><img src="nord/XXX028.png"></center><br>
+<p>Détail de la came réglable.
+  <center><img src="nord/XXX029.png"></center><br>
+
+<p>Vue des deux détentes (en bleu). En bas, celle de déclenchement des quarts.
+  En haut, celle de déclenchement du grand carillon (toutes les douze heures).
+  
+  <center><img src="nord/XXX030.png"></center><br>
+
+<p>La came horaire comporte une encoche en communication avec une détente vers
+  la droite. Cette détente permettait d'embrayer la levée des heures.
+  
+  <center><img src="nord/XXX031.png"></center><br>
+
+<p>Détail de la partie supérieure menant aux deux cadrans extérieurs. La transmission
+  provenant de l'horloge, faisant un tour par heure, atteint une
+  roue de 16 dents qui engrène avec deux roues similaires d'axe horizontal.
+  À l'extrémité de ces deux axes se trouve un pignon lanterne de 8 fuseaux
+  engrenant avec une roue de 48 dents effectuant donc un tour en six heures,
+  la durée de révolution de l'aiguille des heures sur les
+  <a href="https://fr.wikipedia.org/wiki/Cadran_%C3%A0_six_heures">cadrans extérieurs de
+  6 heures</a>. Il s'agit d'un type de cadran que l'on rencontre plutôt en Italie.
+  
+  <center><img src="nord/XXX032.png"></center><br>
+
+<p>Détail du pignon lanterne de 8 fuseaux et de la roue à 48 dents.
+  L'arbre de cette roue porte l'aiguille extérieure des heures.
+  
+  <center><img src="nord/XXX033.png"></center><br>
+
+<p>Le rouage de sonnerie des quarts et heures vu par la droite (en bleu).
+  
+
+  
+  <center><img src="nord/XXX034.png"></center><br>
+
+<p>Le cylindre du rouage de sonnerie des quarts et heures.
+  La roue première se trouve à gauche et la roue de remontage à droite.
+  La roue à rochet se trouve à gauche et, comme pour le rouage de mouvement,
+  elle est solidaire de la roue première.
+  
+  <center><img src="nord/XXX035.png"></center><br>
+
+<p>La roue à rochet du cylindre du rouage de sonnerie des quarts et heures.
+
+  
+  <center><img src="nord/XXX036.png"></center><br>
+
+<p>Dans le prolongement de l'arbre de la roue première se trouve
+  le pignon de 12 ailes entraînant la roue de compte. Cette roue
+  comporte 57 dents, une valeur quelque peu inhabituelle,
+  mais qui correspond au nombre de coups des quarts et heures en six heures,
+  sachant que les quatrièmes quarts ne sont pas sonnés. On a donc
+  (1+2+3)*6+1+2+3+4+5+6=57.
+  
+  <center><img src="nord/XXX037.png"></center><br>
+
+<p>Vue d'ensemble de la roue de compte. Celle-ci est aussi munie
+  de tenons de chaque côté, ces tenons agissant sur deux levées
+  situées en haut à droite. Par ailleurs, la roue première de ce rouage
+  comporte aussi des tenons, mais qui ne servent que pour les heures.
+  Au dessus de la roue de compte, on distingue le bras palpeur.
+  
+  <center><img src="nord/XXX038.png"></center><br>
+
+<p>Vue d'ensemble du cylindre de la sonnerie des quarts et des heures.
+  La roue première (84 dents) est à droite. On y distingue les tenons
+  de levée, mais seuls les tenons à gauche sont utilisés.
+  Ceux de droite (côté roue de compte) étaient peut-être utilisés
+  un jour, mais ne semblent plus l'être.
+  La roue à gauche du cylindre est celle de remontage (60 dents).
+  
+  <center><img src="nord/XXX039.png"></center><br>
+
+<p>Au premier plan la roue seconde de 48 dents. Au fond
+  le pignon de 14 ailes de la roue seconde
+  et en bas la roue première de 84 dents.
+  En haut au fond, on distingue le bras d'arrêt.
+  Tout au fond, on aperçoit la roue de compte.
+  Vers la droite, on aperçoit les deux bras de la détente de déclenchement.
+  L'un sert à soulever le bras palpeur de la roue de compte qui bloque une extrémité
+  du bras d'arrêt, l'autre sert à bloquer le bras d'arrêt par son autre
+  extrémité après un demi-tour.
+  
+  <center><img src="nord/XXX040.png"></center><br>
+
+<p>En haut l'arbre du bras d'arrêt avec son pignon de 6 ailes.
+  Ce pignon engrène avec la roue seconde de 48 dents.
+  
+  <center><img src="nord/XXX041.png"></center><br>
+
+<p>Le bras d'arrêt est bloqué par un appendice du bras palpeur
+  de la roue de compte. Ce bras palpeur est prolongé vers la droite
+  par une sorte de crosse qui peut être soulevée
+  par la détente du rouage, actionnée par le rouage de mouvement
+  comme cela a été montré plus haut.
+  
+  <center><img src="nord/XXX042.png"></center><br>
+
+<p>Derrière la roue seconde de 48 dents se trouve une came à deux encoches.
+  Cette roue effectue en effet un demi-tour par coup de sonnerie
+  et le bras palpeur est aussi solidaire du bras portant un rouleau
+  à l'extrémité et appuyant sur cette came.
+  
+  <center><img src="nord/XXX043.png"></center><br>
+
+<p>Au niveau du rouage de mouvement, comme on l'a montré plus haut,
+  il y a une détente qui est abaissée à chaque quart, puis relachée.
+  Les déclenchements se produisent en deux temps, comme c'est souvent le cas.
+  Il y a un avertissement, puis un délai (ces deux mots sont souvents
+  mélangés par les horlogers, l'avertissement est un événement ponctuel,
+  le délai est une durée). Sur cette vue, la bielle horizontale du fond
+  est repoussée vers la droite à l'approche d'un quart, puis retirée
+  vers la gauche au moment du quart.
+  
+  <center><img src="nord/XXX044.png"></center><br>
+
+<p>La bielle se poursuit jusqu'au rouage de sonnerie des quarts et des heures.
+  
+  <center><img src="nord/XXX045.png"></center><br>
+
+<p>Là, elle agit sur un autre levier dont l'arbre porte deux
+  bras.
+  
+  <center><img src="nord/XXX046.png"></center><br>
+
+  <p>Détail de cet arbre et de ces deux bras (à droite).
+  
+    <center><img src="nord/XXX047.png"></center><br>
+
+  <p>Les deux bras vus de haut. Celui du fond va soulever l'extrémité
+    du bras palpeur, comme cela a été expliqué plus haut.
+    En même temps, le bras d'arrêt va être libéré.
+    Le bras au premier plan va alors intercepter ce bras. C'est la phase
+    de l'avertissement. Lors du déclenchement proprement dit, donc
+    après le délai, les bras vont retomber et le bras d'arrêt va être libéré.
+    Entre temps, suite au demi-tour du bras d'arrêt et à la came
+    à deux encoches située sur l'arbre de la roue seconde, le palpeur
+    a été sorti de l'encoche dans laquelle il se trouvait.
+    
+    <center><img src="nord/XXX048.png"></center><br>
+
+    <p>L'arbre du bras d'arrêt.
+    
+      <center><img src="nord/XXX049.png"></center><br>
+
+<p>Le système de déclenchement du bras d'arrêt.
+      
+  <center><img src="nord/XXX050.png"></center><br>
+
+<p>Le bras d'arrêt.
+  
+  <center><img src="nord/XXX051.png"></center><br>
+
+<p>Le bras palpeur de la roue de compte.
+
+  
+  <center><img src="nord/XXX052.png"></center><br>
+
+<p>Le bras d'arrêt.
+  
+  <center><img src="nord/XXX053.png"></center><br>
+
+<p>La levée des heures. Celle-ci est déplaçable longitudinalement.
+  
+  <center><img src="nord/XXX054.png"></center><br>
+
+<p>L'arbre de la levée comporte une tirée à droite.
+  
+
+  
+  <center><img src="nord/XXX055.png"></center><br>
+
+<p>Cette tirée se poursuit vers le haut et atteint une bascule.
+  
+  <center><img src="nord/XXX056.png"></center><br>
+
+<p>Vue de la bascule dans la partie supérieure.
+  
+<center><img src="nord/XXX057.png"></center><br>
+<p>Vue de la bascule dans la partie supérieure.
+  <center><img src="nord/XXX058.png"></center><br>
+
+<p>La détente de débrayage. Au moment de la sonnerie des heures, l'extrémité
+  de cette détente tombe dans l'encoche de la came horaire située à l'avant.
+  
+  <center><img src="nord/XXX059.png"></center><br>
+
+<p>La chute de cette détente provoque un soulèvement d'une bielle verticale
+  à l'arrière.
+  
+  <center><img src="nord/XXX060.png"></center><br>
+
+<p>Ce soulèvement est ensuite transmis à un arbre horizontal situé
+  sous la roue de compte.
+  
+  <center><img src="nord/XXX061.png"></center><br>
+
+<p>À droite de cette arbre, la rotation de cet arbre fait
+  avancer une sorte de crosse qui retient normalement en arrière l'arbre
+  coulissant de la levée.
+  
+  <center><img src="nord/XXX062.png"></center><br>
+
+<p>À l'autre extrémité de cet arbre, un ressort (ici en bleu clair)
+  repousse normalement l'arbre vers le fond. Au final, lors des trois
+  premiers quarts la levée des heures n'est pas en prise avec les tenons
+  de la roue première, tandis qu'au moment des heures elle l'est.
+  
+<center><img src="nord/XXX066.png"></center><br>
+
+<p>Les deux levées pour les tenons de la roue de compte.
+  Ces tenons servaient pour les sonnerie des quarts.
+
+  <center><img src="nord/XXX063.png"></center><br>
+
+<p>Ces levées sont situeés sur un même axe, celle de devant directement
+  sur l'arbre principal, tandis que celle du fond est sur un cadre basculant
+  sur l'arbre. Ces deux levées sont reliées à des tirées visibles ici,
+  mais où les fils de tirée ne sont pas représentés.
+
+  
+  <center><img src="nord/XXX064.png"></center><br>
+
+<p>Lors du déclenchement des heures, la détente qui sert pour l'embrayage
+  de la levée des heures sert aussi à l'arrière à déclencher le rouage
+  du petit carillon, qui sonnait donc toutes les heures. Ici, la bielle
+  au premier plan est déplacée vers la gauche. Ceci se produisait sans doute
+  quelques minutes avant la sonnerie des heures. La sonnerie des heures
+  elle-même était déclenchée par la détente des quarts vue plus haut.
+
+  <center><img src="nord/XXX065.png"></center><br>
+
+<p>Détail du déclenchement du petit carillon.
+  
+
+  <center><img src="nord/XXX067.png"></center><br>
+
+<p>La détente du carillon interagit aussi avec deux tenons situés à la
+  périphérie de la roue première du tambour de ce carillon.
+  On distingue ici l'un de ces tenons.
+  
+  <center><img src="nord/XXX068.png"></center><br>
+
+<p>On distingue ici les deux tenons, un au premier plan (en noir),
+  un autre plus loin (et apparaissant plus petit), aussi en noir.
+  Ces tenons doivent servir pour les deux avertissements
+  du petit carillon.
+  
+  <center><img src="nord/XXX069.png"></center><br>
+
+<p>Les roues de remontage du rouage de sonnerie des quarts et heures.
+  La roue principale a 60 dents et la roue intermédiaire en a 42.
+  
+<center><img src="nord/XXX070.png"></center><br>
+<p>Les roues de remontage du rouage de sonnerie des quarts et heures.
+  La roue principale a 60 dents et la roue intermédiaire en a 42.
+  Le pignon du bas a 6 ailes.
+  <center><img src="nord/XXX071.png"></center><br>
+
+<p>Sur l'arbre de ce pignon de 6 ailes se trouve à l'avant une roue de 22 dents
+  engrenant avec un pignon lanterne de 6 fuseaux situé sur l'arbre
+  de la manivelle.
+  
+  <center><img src="nord/XXX072.png"></center><br>
+
+<p>La manivelle de remontage du rouage de sonnerie des quarts et heures.
+  
+  <center><img src="nord/XXX073.png"></center><br>
+
+<p>La vue ci-dessous montre le tambour du grand carillon, déclenché
+  toutes les douze heures par le rouage de mouvement. Le rouage de
+  ce carillon est analogue à un rouage
+  de sonnerie, avec une roue première qui au lieu de porter quelques tenons
+  (par exemple 12), porte des centaines de petits taquets répartis
+  sur un cylindre. Il faut donc distinguer le cylindre qui porte
+  les taquets, visible ici, du cylindre autour duquel s'enroule
+  la corde ou le câble, qui se trouve plus loin à droite.
+  Le tambour (ou cylindre) des taquets comporte habituellement des trous
+  où l'on fixe des taquets. La modélisation des horloges de Mafra a,
+  pour une raison un peu curieuse, ignoré ces trous et taquets, qui
+  sont de fait absents. Ces trous sont normalement répartis sur des cercles,
+  chaque trou correspondant à une levée. Chaque cercle comporte un
+  certain nombre de taquets qui correspondent à une cloche donnée.
+  Dans le cas présent, il y a deux séries de cercles, pour les mêmes cloches. Pour une
+  raison que j'ignore, il y a sur cette vue 48 levées dans la moitié
+  gauche du tambour et 47 levées dans la moitié droite.
+  Le fait qu'il y ait deux séries quasiment identiques
+  s'explique sans doute par le fait que chaque cloche est munie
+  de deux marteaux, afin de pouvoir réaliser des mélodies
+  plus fines. Lorsqu'il n'y a qu'un seul marteau, il faut attendre
+  qu'un marteau ait été relevé pour pouvoir rejouer une même note.
+  Avec deux marteaux, on peut diviser ce temps par deux.
+  
+  <center><img src="nord/XXX074.png"></center><br>
+
+<p>L'arrière du tambour du grand carillon.
+  
+  <center><img src="nord/XXX075.png"></center><br>
+
+<p>L'arrière du tambour du grand carillon.
+
+  
+  <center><img src="nord/XXX076.png"></center><br>
+
+<p>La roue première du carillon. Sauf erreur de ma part, cette roue comporte 143 dents.
+  Elle engrène avec le pignon de 11 ailes de la roue seconde. La roue première
+  fait un tour à chaque déclenchement du carillon. L'autre extrémité du tambour
+  comporte un bord avec une seule encoche qui impose ce fonctionnement.
+  Par ailleurs, la roue seconde fait exactement 13 tours lors de ce fonctionnement.
+  
+  <center><img src="nord/XXX077.png"></center><br>
+
+<p>Le pignon de 11 ailes de la roue seconde du rouage du grand carillon.
+  
+  <center><img src="nord/XXX078.png"></center><br>
+
+<p>L'arbre du pignon de la roue seconde, avec à gauche ce pignon (11 ailes)
+  et à droite la roue seconde de 90 dents.
+  
+  <center><img src="nord/XXX079.png"></center><br>
+
+  <p>La roue seconde de 90 dents et le pignon de 10 ailes de la roue d'arrêt.
+  
+<center><img src="nord/XXX080.png"></center><br>
+  <p>La roue seconde de 90 dents et le pignon de 10 ailes de la roue d'arrêt.
+
+
+<center><img src="nord/XXX081.png"></center><br>
+  <p>La roue seconde de 90 dents et le pignon de 10 ailes de la roue d'arrêt.
+    On distingue en bas le bord à une encoche du tambour. Une détente
+    repose sur ce bord.
+
+<center><img src="nord/XXX082.png"></center><br>
+  <p>La roue seconde de 90 dents et le pignon de 10 ailes de la roue d'arrêt.
+    On distingue en bas le bord à une encoche du tambour. Une détente
+    repose sur ce bord.
+
+    <center><img src="nord/XXX083.png"></center><br>
+
+  <p>Le déclenchement du rouage trouve son origine dans le rouage
+    de mouvement. C'est l'arbre bleu du haut, actionné par la grande
+    roue semi-diurne (12 heures) de droite, qui a comme prolongement
+    un arbre du rouage du grand carillon.
+    
+    <center><img src="nord/XXX084.png"></center><br>
+
+  <p>L'arbre du grand carillon prolongeant celui de la détente du rouage
+    de mouvement. L'arbre du haut fait un mouvement
+    de rotation, ici dans le sens horaire, puis retombe.
+    En même temps, par le jeu d'une bielle, l'arbre du bas fait un mouvement similaire.
+    Les deux arbres correspondent à deux détentes du rouage du grand carillon.
+    
+    <center><img src="nord/XXX085.png"></center><br>
+
+  <p>L'arbre inférieur porte un levier terminé par une barre à trous.
+
+    <center><img src="nord/XXX088.png"></center><br>
+
+  <p>La fonction de cette barre n'est pas très claire. D'habitude, les barres
+    à trous servent à fixer des tirées et éventuellement à les déplacer
+    pour modifier le bras de levier, mais peut-être était-ici simplement
+    un moyen de fixer un contrepoids&nbsp;?
+    
+    <center><img src="nord/XXX087.png"></center><br>
+
+  <p>L'extrémité de la barre à trous vue depuis le cylindre
+    (de remontage) du rouage du grand carillon.
+    Le grand tambour se trouve à l'arrière.
+    Les rouages en vert sont ceux du remontage du rouage de mouvement.
+    
+    <center><img src="nord/XXX086.png"></center><br>
+
+  <p>Les deux arbres portent des bras qui bloquent ou débloquent
+    la roue d'arrêt. En temps normal, comme sur cette vue, c'est le bras
+    inférieur qui bloque la roue, du fait d'un taquet placé sur le bord
+    intérieur de la roue. Lorsque ce bras va être soulevé,
+    la roue est libérée. 
+    
+    <center><img src="nord/XXX089.png"></center><br>
+
+  <p>Autre vue montrant le blocage de la roue d'arrêt par le levier inférieur
+    (qui de fait a son extrémité placée plus haut que le levier
+    «&nbsp;supérieur&nbsp;»).
+    La roue d'arrêt porte des dents de champ (c'est une roue de champ)
+    et elle engrène avec le pignon du volant, d'axe vertical.
+    
+    <center><img src="nord/XXX090.png"></center><br>
+
+  <p>Autre vue montrant la roue d'arrêt et les deux bras.
+    On distingue tout en haut de la roue un petit tenon.
+    Lors du déclenchement du rouage du grand carillon,
+    qui se fait aussi en deux temps, la roue d'arrêt fait
+    un demi-tour et le tenon supérieur bute
+    sur le bras d'arrêt (de l'arbre) supérieur.
+    C'est le moment de l'avertissement qui
+    se produisait probablement un peu avant la sonnerie
+    de midi ou minuit.
+    <center><img src="nord/XXX091.png"></center><br>
+
+<p>Autre vue montrant la roue d'arrêt, son pignon et son blocage.
+    
+  <center><img src="nord/XXX092.png"></center><br>
+
+  <p>La roue d'arrêt et son arbre.
+    <center><img src="nord/XXX093.png"></center><br>
+
+<p>Les levées de la moitié gauche (arrière) du grand carillon.
+    
+  <center><img src="nord/XXX094.png"></center><br>
+
+<p>Le cylindre d'entraînement (en jaune) du grand carillon.
+  Ce cylindre est placé sur l'axe du tambour à taquets.
+  
+  <center><img src="nord/XXX095.png"></center><br>
+
+<p>Derrière le cylindre se trouve une roue à rochet. Celle-ci est
+  solidaire du tambour à taquet et c'est en fait le cylindre
+  d'entraînement et ses deux cliquet qui tournent lors du remontage.
+  
+  <center><img src="nord/XXX096.png"></center><br>
+
+<p>À gauche du cylindre, en fait à l'avant, se trouve la roue de remontage
+  de 60 dents. Celle-ci engrène avec un pignon lanterne de 8 fuseaux.
+  L'arbre de ce pignon peut être déplacé, de telle sorte que le pignon
+  et la grande roue de remontage peuvent être désengrénés.
+  
+  <center><img src="nord/XXX097.png"></center><br>
+
+<p>La grande roue de remontage du grand carillon et le pignon lanterne à 8 fuseaux.
+  On distingue les deux positions de l'arbre de ce pignon.
+  
+  <center><img src="nord/XXX098.png"></center><br>
+
+<p>Détail du pignon lanterne à 8 fuseaux.
+  On distingue les deux positions de l'arbre de ce pignon.
+  Le fait que les fuseaux ne soient pas cylindriques est lié
+  à l'export mal paramétré de
+  <a href="https://fr.wikipedia.org/wiki/SolidWorks">SolidWorks</a> vers
+  <a href="https://fr.wikipedia.org/wiki/WebGL">WebGL</a> et
+      <a href="https://fr.wikipedia.org/wiki/Three.js">Three.js</a>.
+  
+  <center><img src="nord/XXX099.png"></center><br>
+
+<p>Le pignon précédent de 8 ailes est ici visible à droite.
+  Sur son arbre se trouve une roue de 40 dents qui engrène avec un
+  autre pignon de 7 ailes.
+  
+  <center><img src="nord/XXX100.png"></center><br>
+
+<p>L'arbre du pignon de 7 ailes porte une roue de 36 dents
+  qui engrène avec un pignon lanterne de 10 fuseaux.
+  
+  <center><img src="nord/XXX101.png"></center><br>
+
+<p>La roue de 36 dents et le pignon lanterne de 10 fuseaux.
+  
+  <center><img src="nord/XXX102.png"></center><br>
+
+<p>La manivelle se trouve sur l'arbre du pignon lanterne de 10 fuseaux.
+  
+  <center><img src="nord/XXX103.png"></center><br>
+
+<p>Le levier qui permet de désengréner la grande roue de remontage de 60 dents
+  et le pignon lanterne de 8 fuseaux.
+  
+  <center><img src="nord/XXX104.png"></center><br>
+
+<p>Les équerres de renvoi au-dessus des levées du grand tambour. Il est dommage
+  que les tirées n'aient pas été reconstituées.
+  
+<center><img src="nord/XXX105.png"></center><br>
+
+<p>Les équerres de renvoi au-dessus des levées du grand tambour.
+
+  <center><img src="nord/XXX106.png"></center><br>
+
+<p>Le tambour du petit carillon, déclenché toutes les heures.
+  Sa structure est similaire à celle du grand carillon.
+  Il n'y a par contre que 38 levées à gauche et 37 à droite (côté pendule).
+  Il y a visiblement aussi deux levées par cloche.
+  Le petit carillon n'utilise visiblement qu'une partie
+  des cloches disponibles dans la tour Nord.
+  
+  <center><img src="nord/XXX107.png"></center><br>
+
+<p>La roue première du petit carillon comporte semble-t-il 96 dents.
+  Cette roue fait un tour par déclenchement.
+  Le pignon de la roue seconde comporte 12 ailes.
+  
+  <center><img src="nord/XXX108.png"></center><br>
+
+<p>Détail du pignon de 12 ailes de la roue seconde du petit carillon.
+  
+  <center><img src="nord/XXX109.png"></center><br>
+
+<p>La roue seconde de 100 dents du petit carillon et le pignon
+  de 10 ailes de la roue d'arrêt. On distingue en bas
+  une encoche qui conduit à l'arrêt du carillon.
+  Il y a en fait deux encoches et ce carillon comporte probablement deux
+  mélodies qui étaient alternées.
+  
+  <center><img src="nord/XXX110.png"></center><br>
+
+<p>Le pignon de 10 ailes de la roue d'arrêt du petit carillon.
+  
+  <center><img src="nord/XXX111.png"></center><br>
+
+<p>L'arbre de la roue d'arrêt du petit carillon.
+  
+  <center><img src="nord/XXX112.png"></center><br>
+
+<p>À la différence du grand carillon, il n'y a ici qu'un levier.
+  Ce carillon se décomposait en deux mélodies, qui devaient alterner, aux heures
+  paires et impaires. Ceci est cohérent avec l'existence de deux encoches sur
+  le bord à encoches, ainsi que de deux tenons noirs au niveau
+  de la roue première. Ces deux tenons remplacent de ce fait l'unique
+  tenon d'avertissement que l'on trouve sur la roue d'arrêt du grand carillon.
+  
+  <center><img src="nord/XXX113.png"></center><br>
+
+<p>La roue d'arrêt du petit carillon.
+  
+  <center><img src="nord/XXX114.png"></center><br>
+
+<p>La roue d'arrêt du petit carillon et le pignon avec lequel
+  elle engrène.
+  <center><img src="nord/XXX115.png"></center><br>
+
+<p>La détente de déclenchement du rouage du petit carillon. La détente
+  de droite repousse vers la gauche le levier noir vertical.
+  
+<center><img src="nord/XXX116.png"></center><br>
+<p>La détente de déclenchement du rouage du petit carillon. La détente
+  de droite repousse vers la gauche le levier noir vertical.
+  <center><img src="nord/XXX117.png"></center><br>
+
+<p>Le bras pénétrant dans les encoches du bord à encoche du tambour
+  du petit carillon.
+  
+  <center><img src="nord/XXX118.png"></center><br>
+
+<p>Ce tambour comporte deux encoches, une actuellement à la verticale, et une un peu plus bas,
+  visible ici.
+  
+  <center><img src="nord/XXX119.png"></center><br>
+
+<p>Les levées du tambour du petit carillon. Il y a 38 levées à gauche et 37 à droite.
+  Elles semblent agir sur les mêmes cloches et on pouvait peut-être choisir
+  l'une ou l'autre des séries. Cela dit, il est aussi possible qu'il y avait pour chaque
+  cloche deux marteaux, ce qui permettait alors la réalisation
+  de mélodies plus fines.
+  
+  <center><img src="nord/XXX120.png"></center><br>
+
+<p>Les équerres au-dessus des levées du petit tambour.
+  
+  <center><img src="nord/XXX121.png"></center><br>
+
+<p>Le cylindre d'entraînement du petit carillon.
+  La roue de remontage à gauche comporte 64 dents.
+  
+  <center><img src="nord/XXX122.png"></center><br>
+
+<p>La roue à rochet du cylindre d'entraînement du petit carillon.
+  
+  <center><img src="nord/XXX123.png"></center><br>
+
+<p>Le cylindre d'entraînement du petit carillon et sa grande roue de 64 dents.
+  
+  <center><img src="nord/XXX124.png"></center><br>
+
+<p>Au moment du remontage, la grande roue de remontage engrène
+  avec un pignon lanterne de 8 fuseaux. Ce pignon peut être
+  désengréné, ce qui est le cas ici.
+  
+  <center><img src="nord/XXX125.png"></center><br>
+
+<p>Détail du dispositif de désengrénement du pignon de 8 fuseaux.
+
+<center><img src="nord/XXX126.png"></center><br>
+
+<p>Un levier situé à l'avant du rouage permet de déplacer
+  l'arbre du pignon de 8 fuseaux.
+  
+  <center><img src="nord/XXX132.png"></center><br>
+
+<p>L'arbre du pignon à 8 fuseaux. À gauche, une roue de 40 dents.
+  Celle-ci engrène avec un autre pignon lanterne de 7 fuseaux.
+  
+  <center><img src="nord/XXX127.png"></center><br>
+
+<p>L'arbre du pignon lanterne de 7 fuseaux (à gauche) comporte une roue
+  de 36 dents (à droite). Celle-ci engrène avec
+  un autre pignon lanterne de 10 fuseaux (au fond).
+  
+  <center><img src="nord/XXX128.png"></center><br>
+
+<p>La roue de 36 dents (en noir) et la roue symétrique du grand carillon (en jaune).
+  
+  <center><img src="nord/XXX129.png"></center><br>
+
+<p>La roue de 36 dents (à gauche) et le pignon lanterne de 10 fuseaux.
+  
+  <center><img src="nord/XXX130.png"></center><br>
+
+<p>Le pignon lanterne de 10 fuseaux se trouve sur l'arbre de la manivelle
+  de remontage.
+  
+  <center><img src="nord/XXX131.png"></center><br>
+
+<p>Vue par le dessous des rouages de remontage du grand carillon (en jaune) et
+  du petit carillon (en noir). Le rouage de mouvenent est en vert
+  et le rouage de sonnerie des quarts et heures est en bleu.
+  
+<center><img src="nord/XXX133.png"></center><br>
+
+   
+<p>Le contenu de cette page s'enrichit régulièrement.
+
+<p><a href="https://roegel.wixsite.com/science">D. Roegel</a>
+  
+<p>Derni&egrave;re modification&nbsp;: 22 octobre 2022.
+  
+  </body>
+</html>
