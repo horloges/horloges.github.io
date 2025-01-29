@@ -47,10 +47,22 @@
                 scene.add(gltf.scene);
             });
             
-            let light = new THREE.DirectionalLight(0xffffff, 1);
-            light.position.set(10, 10, 10);
-            scene.add(light);
+            let lightFront = new THREE.DirectionalLight(0xffffff, 1);
+            lightFront.position.set(10, 10, 10);
+            scene.add(lightFront);
             
+            let lightBack = new THREE.DirectionalLight(0xffffff, 1);
+            lightBack.position.set(0, 1000, -1000);
+            scene.add(lightBack);
+            
+            let lightRight = new THREE.DirectionalLight(0xffffff, 1);
+            lightRight.position.set(1100, 1000, 0);
+            scene.add(lightRight);
+            
+            let lightLeft = new THREE.DirectionalLight(0xffffff, 1);
+            lightLeft.position.set(-1100, 1000, 0);
+            scene.add(lightLeft);
+	    
             window.addEventListener('resize', function() {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
