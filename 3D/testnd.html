@@ -30,7 +30,7 @@
             scene = new THREE.Scene();
             
             camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.01, 10000);
-            camera.position.set(0, 2, 5);
+            camera.position.set(0, -500, 5);
             
             renderer = new THREE.WebGLRenderer({ antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight - 100);
@@ -47,19 +47,19 @@
                 scene.add(gltf.scene);
             });
             
-            let lightFront = new THREE.DirectionalLight(0xffffff, 1);
+            let lightFront = new THREE.DirectionalLight(0xffffff, 0.5);
             lightFront.position.set(10, 10, 10);
             scene.add(lightFront);
             
-            let lightBack = new THREE.DirectionalLight(0xffffff, 1);
+            let lightBack = new THREE.DirectionalLight(0xffffff, 0.5);
             lightBack.position.set(0, 1000, -1000);
             scene.add(lightBack);
             
-            let lightRight = new THREE.DirectionalLight(0xffffff, 1);
+            let lightRight = new THREE.DirectionalLight(0xffffff, 0.5);
             lightRight.position.set(1100, 1000, 0);
             scene.add(lightRight);
             
-            let lightLeft = new THREE.DirectionalLight(0xffffff, 1);
+            let lightLeft = new THREE.DirectionalLight(0xffffff, 0.5);
             lightLeft.position.set(-1100, 1000, 0);
             scene.add(lightLeft);
 	    
