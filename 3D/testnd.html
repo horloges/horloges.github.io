@@ -3,60 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visionneuse 3D GLTF</title>
+    <title>Visionneuse GLTF - Mode FPS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/PointerLockControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
     <style>
-        body { margin: 0; }
+        body { margin: 0; overflow: hidden; }
         canvas { display: block; }
+        #startButton {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/build/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.140.0/examples/js/loaders/GLTFLoader.js"></script>
-
+    <button id="startButton">Entrer dans la visionneuse</button>
     <script>
-        // Scène, caméra, et rendu
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        // Ajouter une lumière ambiante
-        const light = new THREE.AmbientLight(0x404040, 2); // lumière ambiante douce
-        scene.add(light);
-
-        // Ajouter une lumière directionnelle
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-        directionalLight.position.set(5, 5, 5).normalize();
-        scene.add(directionalLight);
-
-        // Charger le modèle .gltf
-        const loader = new THREE.GLTFLoader();
-        loader.load('nd-v0.gltf', function (gltf) {
-            scene.add(gltf.scene);
-            gltf.scene.scale.set(1, 1, 1); // Ajustez l'échelle selon votre besoin
-            gltf.scene.position.set(0, 0, 0); // Position initiale du modèle
-        }, undefined, function (error) {
-            console.error(error);
-        });
-
-        // Positionner la caméra
-        camera.position.z = 5;
-
-        // Fonction d'animation
+        let scene, camera, renderer, controls;
+        let moveForward = false, moveBackward = false, moveLeft = false, moveRight = false;
+        let velocity = new THREE.Vector3();
+        let direction = new THREE.Vector3();
+        
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+            
+            controls = new THREE.PointerLockControls(camera, document.body);
+            document.getElementById('startButton').addEventListener('click', function() {
+                controls.lock();
+            });
+            
+            controls.addEventListener('lock', () => document.getElementById('startButton').style.display = 'none');
+            controls.addEventListener('unlock', () => document.getElementById('startButton').style.display = 'block');
+            
+            const loader = new THREE.GLTFLoader();
+            loader.load('nd-v0.gltf', function(gltf) {
+                scene.add(gltf.scene);
+            });
+            
+            let light = new THREE.DirectionalLight(0xffffff, 1);
+            light.position.set(10, 10, 10);
+            scene.add(light);
+            
+            window.addEventListener('resize', function() {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+            
+            document.addEventListener('keydown', (event) => {
+                switch (event.code) {
+                    case 'KeyW': moveForward = true; break;
+                    case 'KeyS': moveBackward = true; break;
+                    case 'KeyA': moveLeft = true; break;
+                    case 'KeyD': moveRight = true; break;
+                }
+            });
+            
+            document.addEventListener('keyup', (event) => {
+                switch (event.code) {
+                    case 'KeyW': moveForward = false; break;
+                    case 'KeyS': moveBackward = false; break;
+                    case 'KeyA': moveLeft = false; break;
+                    case 'KeyD': moveRight = false; break;
+                }
+            });
+        }
+        
         function animate() {
             requestAnimationFrame(animate);
+            
+            if (controls.isLocked) {
+                direction.z = Number(moveForward) - Number(moveBackward);
+                direction.x = Number(moveRight) - Number(moveLeft);
+                direction.normalize();
+                
+                velocity.z -= direction.z * 0.1;
+                velocity.x -= direction.x * 0.1;
+                
+                controls.moveRight(-velocity.x);
+                controls.moveForward(-velocity.z);
+                
+                velocity.multiplyScalar(0.9);
+            }
+            
             renderer.render(scene, camera);
         }
-
+        
+        init();
         animate();
-
-        // Gérer le redimensionnement de la fenêtre
-        window.addEventListener('resize', () => {
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-        });
     </script>
 </body>
 </html>
