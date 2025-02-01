@@ -54,7 +54,7 @@
             camera.position.set(0, 0, 1500);
             
             renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight - 100);
+            renderer.setSize(window.innerWidth, window.innerHeight-100);
             document.getElementById('container').appendChild(renderer.domElement);
             
             controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -100,17 +100,17 @@
             let lightBottom = new THREE.DirectionalLight(0xffffff, 0.5);
             lightBottom.position.set(0, -2000, 0);
             scene.add(lightBottom);
-	    
-            window.addEventListener('resize', function() {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight - 100);
-            });
 
             window.addEventListener('click', onClick);
             window.addEventListener('touchstart', onTouch, { passive: false });
             // Écouter les événements du clavier
             window.addEventListener('keydown', onKeyDown, false);
+       // Redimensionner la scène si la fenêtre change de taille
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight-100);
+        });
 		
         }; // end init function
 
@@ -214,12 +214,6 @@
         init();
         animate();
 
-       // Redimensionner la scène si la fenêtre change de taille
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
     </script>
     <div id="info">Click on a part</div>
 </body>
