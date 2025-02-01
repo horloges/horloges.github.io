@@ -40,7 +40,13 @@
     <script>
         let scene, camera, renderer, controls;
         let selectedObject = null,allObjects = [];
-        
+        // Gestion du clic sur un objet
+        const raycaster = new THREE.Raycaster();
+	const mouse = new THREE.Vector2();
+        const objects = [];
+        // Variables pour gérer la sélection
+        let originalColor = new THREE.Color();
+
         function init() {
             scene = new THREE.Scene();
             
@@ -48,7 +54,7 @@
             camera.position.set(0, 0, 1500);
             
             renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight - 100);
+            renderer.setSize(window.innerWidth, window.innerHeight-100);
             document.getElementById('container').appendChild(renderer.domElement);
             
             controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -58,9 +64,6 @@
             controls.maxPolarAngle = Math.PI;
 
 
-            // Variables pour gérer la sélection
-            let originalColor = new THREE.Color();
-
 	    
             const loader = new THREE.GLTFLoader();
             loader.load('nd-v0.gltf', function(gltf) {
@@ -68,75 +71,14 @@
                 allObjects = gltf.scene.children; // Stocker tous les objets du modèle
 	
                 // Récupérer les objets cliquables
-                const objects = [];
                 gltf.scene.traverse((child) => {
                   if (child.isMesh) {
                       objects.push(child);
 		      // Sauvegarder la couleur initiale de chaque objet
                       child.userData.originalColor = child.material.color.clone();
-
                   }
                 });
-
-            // Gestion du clic sur un objet
-            const raycaster = new THREE.Raycaster();
-            const mouse = new THREE.Vector2();
-            document.addEventListener('click', (event) => {
-                mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-                raycaster.setFromCamera(mouse, camera);
-
-                const intersects = raycaster.intersectObjects(objects);
-                if (intersects.length > 0) {
-                    const obj = intersects[0].object;
-
-
-                    if (selectedObject === obj) {
-                        // Désélection : remettre la couleur d'origine
-                        obj.material.color.copy(originalColor);
-                        selectedObject = null;
-                        document.getElementById('info').innerText = "Click on a part";
-                    } else {
-		    
-                      // Désélectionner l'ancien objet
-                      if (selectedObject) {
-                        selectedObject.material.color.copy(originalColor);
-                      }
-
-                    // Sauvegarder le nouvel objet sélectionné et sa couleur d'origine
-                    selectedObject = obj;
-                    originalColor.copy(obj.userData.originalColor);
-
-                    // Calculer la couleur complémentaire
-                    const complementaryColor = new THREE.Color(
-                        1 - originalColor.r,
-                        1 - originalColor.g,
-                        1 - originalColor.b
-                    );
-                    obj.material.color.copy(complementaryColor);
-
-		    // Affichage du nom et de N si disponible
-                    let infoText = `Selected part: ${obj.name || "No name"}`;
-                    if (obj.userData.N !== undefined) {
-                        infoText += ` (number of teeth: ${obj.userData.N})`;
-                    }
-			document.getElementById('info').innerText = infoText;
-		    }
-                } else {
-                // Si on clique dans le vide, on désélectionne l'objet actuel
-                if (selectedObject) {
-                    selectedObject.material.color.copy(originalColor);
-                    selectedObject = null;
-                    document.getElementById('info').innerText = "Click on a part";
-                }
-	     }
-            });
-
-
-	    // Écouter les événements du clavier
-            document.addEventListener('keydown', onKeyDown, false);
-		
-            });
+	    });
 
 	    
             let lightFront = new THREE.DirectionalLight(0xffffff, 0.5);
@@ -158,43 +100,111 @@
             let lightBottom = new THREE.DirectionalLight(0xffffff, 0.5);
             lightBottom.position.set(0, -2000, 0);
             scene.add(lightBottom);
-	    
-	    
-            window.addEventListener('resize', function() {
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(window.innerWidth, window.innerHeight - 100);
-            });
+
+            window.addEventListener('click', onClick);
+            window.addEventListener('touchstart', onTouch, { passive: false });
+            // Écouter les événements du clavier
+            window.addEventListener('keydown', onKeyDown, false);
+       // Redimensionner la scène si la fenêtre change de taille
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight-100);
+        });
+		
+        }; // end init function
+
+        function onClick(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            selectObject();
+        }
+        
+        function onTouch(event) {
+            if (event.touches.length > 0) {
+                mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(event.touches[0].clientY / window.innerHeight) * 2 + 1;
+                selectObject();
+            }
         }
 
+        // Fonction pour gérer les événements du clavier
+        function onKeyDown(event) {
+          if (!selectedObject) return;
 
-// Fonction pour gérer les événements du clavier
-function onKeyDown(event) {
-  if (!selectedObject) return;
+          switch (event.key) {
+            case 'd':
+            case 'D':
+             // Rendre l'objet sélectionné invisible
+             selectedObject.visible = false;
+             break;
 
-  switch (event.key) {
-    case 'd':
-    case 'D':
-      // Rendre l'objet sélectionné invisible
-      selectedObject.visible = false;
-      break;
+           case 's':
+           case 'S':
+             // Rendre visible uniquement l'objet sélectionné
+             allObjects.forEach((obj) => obj.visible = false); // Cache tous les objets
+             selectedObject.visible = true; // Affiche uniquement l'objet sélectionné
+             break;
 
-    case 's':
-    case 'S':
-      // Rendre visible uniquement l'objet sélectionné
-      allObjects.forEach((obj) => obj.visible = false); // Cache tous les objets
-      selectedObject.visible = true; // Affiche uniquement l'objet sélectionné
-      break;
+           case 'a':
+           case 'A':
+             // Rendre tous les objets visibles
+             allObjects.forEach((obj) => obj.visible = true);
+             break;
+          }
+	}
 
-    case 'a':
-    case 'A':
-      // Rendre tous les objets visibles
-      allObjects.forEach((obj) => obj.visible = true);
-      break;
-  }
-}
+	function selectObject() {
+            raycaster.setFromCamera(mouse, camera);
 
-      
+            const intersects = raycaster.intersectObjects(objects);
+	    //const intersects = raycaster.intersectObjects(scene.children,true);
+            if (intersects.length > 0) { // 1 begin
+                    const obj = intersects[0].object;
+
+                    if (selectedObject === obj) { 
+                        // Désélection : remettre la couleur d'origine
+                        obj.material.color.copy(originalColor);
+                        selectedObject = null;
+                        document.getElementById('info').innerText = "Click on a part";
+                    } else { // 2 begin
+		    
+                      // Désélectionner l'ancien objet
+                      if (selectedObject) {
+                        selectedObject.material.color.copy(originalColor);
+                      }
+
+                      // Sauvegarder le nouvel objet sélectionné et sa couleur d'origine
+		      selectedObject = obj;
+		      originalColor.copy(obj.userData.originalColor);
+
+                    // Calculer la couleur complémentaire
+			const complementaryColor = new THREE.Color(
+                            1 - originalColor.r,
+                            1 - originalColor.g,
+                            1 - originalColor.b			    
+			);
+			obj.material.color.copy(complementaryColor);
+
+		    // Affichage du nom et de N si disponible
+			let infoText = `Selected part: ${obj.name || "No name"}`;
+			if (obj.userData.N !== undefined) {
+                          infoText += ` (number of teeth: ${obj.userData.N})`;
+                        }
+			document.getElementById('info').innerText = infoText;
+		    } // 2 end
+                } // end 1
+              else { // else of 1
+                // Si on clique dans le vide, on désélectionne l'objet actuel
+                if (selectedObject) {
+                    selectedObject.material.color.copy(originalColor);
+                    selectedObject = null;
+                    document.getElementById('info').innerText = "Click on a part";
+                }
+              } // end of 1
+
+	}
+
         function animate() {
             requestAnimationFrame(animate);
             controls.update();
@@ -202,14 +212,8 @@ function onKeyDown(event) {
         }
         
         init();
-      animate();
+        animate();
 
-       // Redimensionner la scène si la fenêtre change de taille
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
     </script>
     <div id="info">Click on a part</div>
 </body>
