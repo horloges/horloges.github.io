@@ -79,7 +79,7 @@ function onClick(event) {
         
 function onTouch(event) {
     if (event.touches.length > 0) {
-	const rect = main.getBoundingClientRect();
+	const rect = container.getBoundingClientRect();
         mouse.x = ((event.touches[0].clientX - rect.left) / rect.width) * 2 - 1;
         mouse.y = -((event.touches[0].clientY - rect.top) / rect.height) * 2 + 1;
         //mouse.x = (event.touches[0].clientX / window.innerWidth) * 2 - 1;
