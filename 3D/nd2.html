@@ -6,8 +6,10 @@
     <title>Modèle 3D en AR</title>
 </head>
 <body>
-    <h2>Voir le modèle en Réalité Augmentée</h2>
-    <a href="nd-v0.glb" rel="ar">
+  <h2>Voir le modèle en Réalité Augmentée</h2>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer src="nd-v0.glb" ar ar-modes="scene-viewer quick-look" camera-controls></model-viewer>
+
         <button>Ouvrir en AR</button>
     </a>
 </body>
