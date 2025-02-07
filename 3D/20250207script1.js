@@ -23,10 +23,12 @@ function init() {
     controls.dampingFactor = 0.05;
     controls.screenSpacePanning = false;
     controls.maxPolarAngle = Math.PI;
-	    
+
+    const loadingScreen = document.getElementById('loading-screen');  
     const loader = new THREE.GLTFLoader();
     loader.load('nd-v0.gltf', function(gltf) {
         scene.add(gltf.scene);
+	loadingScreen.style.display = 'none';
 	gh1a = gltf.scene.getObjectByName("GH1a");
 	gh1b = gltf.scene.getObjectByName("GH1b");
 	gk1a = gltf.scene.getObjectByName("GK1a");
